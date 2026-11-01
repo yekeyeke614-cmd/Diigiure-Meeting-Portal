@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050505">
+<title>ISHAK.exe</title>
+<meta name="description" content="A classified birthday mission.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+
+<button id="sound" class="sound" type="button" aria-pressed="false" aria-label="Turn music on">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path class="on" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path class="off" d="M16 9l5 6M21 9l-5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+</button>
+
+<main>
+  <section id="s1" class="stage" aria-labelledby="t1">
+    <p class="stamp" id="t1" data-cfg="classified"></p>
+    <p class="top">TOP SECRET</p>
+    <p class="recipient">RECIPIENT: <b data-cfg="recipient"></b></p>
+    <p class="lead" data-cfg="intro"></p>
+    <button class="btn" type="button" data-go="2">[ ACCESS MISSION ]</button>
+  </section>
+
+  <section id="s2" class="stage" aria-live="polite" aria-label="Mission initialization">
+    <div id="log" class="log"></div>
+    <div class="bar" aria-hidden="true"><i id="barfill"></i></div>
+    <div id="count" class="count" aria-hidden="true"></div>
+  </section>
+
+  <section id="s3" class="stage" aria-labelledby="t3">
+    <div class="cake" aria-hidden="true">
+      <i class="plate"></i><i class="tier t1"></i><i class="tier t2"></i><i class="tier t3"></i>
+      <i class="candle c1"></i><i class="candle c2"></i><i class="candle c3"></i>
+    </div>
+    <h1 id="t3" class="hb"><span class="gold">HAPPY BIRTHDAY</span><span class="gold name" data-cfg="recipient"></span></h1>
+    <p class="lead" data-cfg="tagline"></p>
+    <button class="btn" type="button" data-go="4">[ OPEN MESSAGE ]</button>
+  </section>
+
+  <section id="s4" class="stage" aria-label="Personal message">
+    <p id="msg" class="msg"></p>
+    <button id="next" class="btn hidden" type="button" data-go="5">[ CONTINUE ]</button>
+  </section>
+
+  <section id="s5" class="stage" aria-labelledby="t5">
+    <h2 id="t5" class="done"><span class="gold" data-cfg="doneTitle"></span><span data-cfg="doneSub"></span></h2>
+    <p class="lead" data-cfg="footer"></p>
+    <button class="btn" type="button" id="replay">[ REPLAY ]</button>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
